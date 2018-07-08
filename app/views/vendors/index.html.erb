@@ -1,7 +1,7 @@
 <%= render 'home/form' %>
-<h1>Vendors#index</h1>
+<h1>ベンダー一覧</h1>
 <% @vendors.each do |vendor| %>
   <div>
-    <%= vendor.name %>
+    <%= link_to("#{vendor.name}", "/vendors/#{vendor.id}") %>
   </div>
 <% end %>
