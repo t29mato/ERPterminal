@@ -1,2 +1,7 @@
+<%= render 'home/form' %>
 <h1>Vendors#index</h1>
-<p>Find me in app/views/vendors/index.html.erb</p>
+<% @vendors.each do |vendor| %>
+  <div>
+    <%= vendor.name %>
+  </div>
+<% end %>
