@@ -1,0 +1,8 @@
+<%= render 'home/form' %>
+<h1>システム一覧</h1>
+<% @systems.each do |system| %>
+  <div>
+    <%= link_to("#{system.name}", "/systems/#{system.id}") %>
+    <a href="/top"><%= system.category %></a>
+  </div>
+<% end %>
