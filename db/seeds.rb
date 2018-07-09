@@ -1,11 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# ベンダー情報を初期設定
+Vendor.create(name: "オービック")
+Vendor.create(name: "富士通")
+Vendor.create(name: "ワークスアプリケーションズ")
+Vendor.create(name: "NEC")
+Vendor.create(name: "NTTデータ")
+Vendor.create(name: "日立ソリューションズ")
+Vendor.create(name: "SCSK")
+Vendor.create(name: "東計電算")
+Vendor.create(name: "コンシスト")
+Vendor.create(name: "東芝ソリューションズ")
 
-10.times do |i|
-  Vendor.create(name: "Company#{i}")
-end
+# システム情報を初期設定
+System.create(name: "OBIC7", vendor_id: 1, category: "会計")
+System.create(name: "OBIC7", vendor_id: 1, category: "人事給与")
+System.create(name: "OBIC7", vendor_id: 1, category: "販売管理")
+System.create(name: "GLOVIA", vendor_id: 2, category: "会計")
+System.create(name: "GLOVIA", vendor_id: 2, category: "人事給与")
+System.create(name: "GLOVIA", vendor_id: 2, category: "販売管理")
