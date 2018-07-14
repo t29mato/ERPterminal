@@ -5,3 +5,66 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* reset ================================ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+}
+
+/* 共通レイアウト ================================ */
+body {
+  margin: 0;
+}
+
+.main {
+}
+
+.container {
+}
+
+/* ヘッダー ================================ */
+header {
+  background: #2b81e0;
+  height: 60px;
+  line-height: 60px;
+  vertical-align: middle;
+}
+
+.header-logo {
+  float: left;
+  margin-left: 10px;
+  img {
+    vertical-align: middle;
+    width: 60px;
+    height: 40px;
+  }
+  a {
+    color: white;
+    font-size: 18px;
+  }
+}
+
+.header-menus {
+  float: right;
+  margin-right: 10px;
+  li {
+    color: white;
+    font-size: 18px;
+  }
+}
