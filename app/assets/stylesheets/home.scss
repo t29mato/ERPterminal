@@ -66,22 +66,29 @@
   margin-top: 50px;
   text-align: center;
 }
+
 img {
   height:60px;
 }
 
-.category-box{
+.item-box{
   display: flex;
-  li {
+  a {
     height: 100px;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    margin: 5px;
+    flex: 1 1 1%;
+    margin: 3px;
     color: #2b81e0;
     border: 1px solid #d6dfe5;
     border-radius: 5px;
+  }
+}
+
+figure {
+  margin: 0px;
+  padding-top: 20px;
+  img {
+    height: 35px;
   }
 }
 
