@@ -59,6 +59,11 @@
 /* search ================================ */
 .main{
   weight: 80%;
+  h2 {
+    margin-top: 5px;
+    font-size: 24px;
+    font-weight: 300;
+  }
 }
 .search-category{
   width: 60%;
@@ -68,7 +73,7 @@
 }
 
 img {
-  height:60px;
+  height:70px;
 }
 
 .item-box{
@@ -78,7 +83,7 @@ img {
     align-items: center;
     flex: 1 1 1%;
     margin: 3px;
-    color: #2b81e0;
+    color: #4b4b4b;
     border: 1px solid #d6dfe5;
     border-radius: 5px;
   }
@@ -95,6 +100,6 @@ figure {
 .search-industry{
   width: 60%;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 80px;
   text-align: center;
 }
