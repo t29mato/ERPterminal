@@ -86,3 +86,32 @@ header {
     margin-right: 10px;
   }
 }
+
+/* フッター ================================ */
+footer {
+}
+
+.footer-menus {
+  background: #2b81e0;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  a {
+    color: white;
+    margin: 0px 10px;
+    font-size: 12px;
+    text-decoration: underline;
+  }
+}
+
+.copy-right {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 10px;
+  margin-bottom: 30px;
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}

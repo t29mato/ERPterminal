@@ -79,21 +79,24 @@ img {
 .item-box{
   display: flex;
   a {
-    height: 100px;
+    height: 120px;
     align-items: center;
     flex: 1 1 1%;
     margin: 3px;
-    color: #4b4b4b;
     border: 1px solid #d6dfe5;
     border-radius: 5px;
+    color: #4b4b4b;
   }
 }
 
 figure {
   margin: 0px;
-  padding-top: 20px;
+  padding-top: 25px;
   img {
-    height: 35px;
+    height: 45px;
+  }
+  figcaption {
+    font-size: 16px;
   }
 }
 
@@ -101,5 +104,6 @@ figure {
   width: 60%;
   margin: 0 auto;
   margin-top: 80px;
+  margin-bottom: 80px;
   text-align: center;
 }
