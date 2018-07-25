@@ -1,9 +1,18 @@
 <%= render 'home/form' %>
-<div class="top-message">
-<h1>ベンダー一覧</h1>
-<% @vendors.each do |vendor| %>
-  <div>
-    <%= link_to("#{vendor.name}", "/vendors/#{vendor.id}") %>
+<main>
+<div class="main">
+  <div class="currentPath">
+    <a href="/top">HOME</a> >
+    <a href="/vendors/index">INDEX</a>
   </div>
-<% end %>
-</div>
+  <div class="container">
+    <h1>ベンダー一覧</h1>
+    <% @vendors.each do |vendor| %>
+      <div>
+        <%= link_to("#{vendor.name}", "/vendors/#{vendor.id}") %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</main>
+<%= render 'home/footer' %>
