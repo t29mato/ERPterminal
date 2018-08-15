@@ -1,18 +1,65 @@
 <%= render 'home/form' %>
 <main>
-<div class="main">
-  <div class="currentPath">
-    <a href="/top">HOME</a> >
-    <a href="/vendors/index">INDEX</a>
-  </div>
-  <div class="container">
-    <h1>ベンダー一覧</h1>
-    <% @vendors.each do |vendor| %>
-      <div>
-        <%= link_to("#{vendor.name}", "/vendors/#{vendor.id}") %>
-      </div>
-    <% end %>
+  <div class="main">
+    <div class="currentPath">
+      <a href="/top">HOME</a> >
+      <a href="/vendors/index">INDEX</a>
     </div>
+    <section class="container">
+      <div class="content-body">
+        <h2>ベンダー一覧</h2>
+        <div class="sortTab">
+          <ul>
+            <p>表示順：</p>
+            <li>
+              <a href="/vendors/index">口コミ数</a>
+            </li>
+            <li>
+              <a href="/vendors/index">ランキング</a>
+            </li>
+          </ul>
+        </div>
+        <ul>
+          <% @vendors.each do |vendor| %>
+            <li>
+              <div class="searchCompanyArea">
+                <div class="searchCompanyLogoArea"><%= image_tag("corporateLogo/#{vendor.id}.png") %></div>
+                <div class="searchCompanyName">
+                  <div>
+                    <%= link_to("#{vendor.name}", "/vendors/#{vendor.id}") %>
+                  </div>
+                  <div class="totalRating-item">
+                    <div class="star-front" style="width: 17px;">★★★★★</div>
+                    <div class="star-back">★★★★★</div>
+                    <div class="rating-num"><%= "#{vendor.id}.5" %></div>
+                  </div>
+                </div>
+                <div class="searchCompanyCategory">
+                  <div class="category">
+                    口コミ数：
+                    <div class="system-name">
+                      <%= link_to("50件", "/vendors/#{vendor.id}") %>
+                    </div>
+                  </div>
+                  <div class="category">
+                    システム：
+                    <div class="system-name">
+                      <%= link_to("OBIC7", "/vendors/#{vendor.id}") %>
+                    </div>
+                    <div class="system-name">
+                      <%= link_to("COMPANY", "/vendors/#{vendor.id}") %>
+                    </div>
+                    <div class="system-name">
+                      <%= link_to("GLOVIA", "/vendors/#{vendor.id}") %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </section>
   </div>
 </main>
 <%= render 'home/footer' %>

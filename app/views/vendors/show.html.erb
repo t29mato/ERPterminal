@@ -1,4 +1,27 @@
 <%= render 'home/form' %>
-<h1>ベンダー詳細</h1>
-<p>id：<%= @vendor.id %></p>
-<p>企業名：株式会社<%= @vendor.name %></p>
+<main>
+  <div class="main">
+    <div class="currentPath">
+      <a href="/top">HOME</a> >
+      <a href="/vendors/index">INDEX</a> >
+      <a><%= @vendor.name %></a>
+    </div>
+    <section class="container">
+      <div class="content-body">
+        <h2><%= @vendor.name %></h2>
+        <div class="totalRating-item">
+          <div class="star-front" style="width: <%= @vendor.id+33 %>px;">★★★★★</div>
+          <div class="star-back">★★★★★</div>
+          <div class="rating-num"><%= "#{@vendor.id}.5" %></div>
+        </div>
+      </div>
+      <div class="title">
+        <h3>ユーザーによる評価スコア</h3>
+      </div>
+      <div class="averageScore">
+        <h3>レーダーチャートをここに記載</h3>
+      </div>
+    </section>
+  </div>
+</main>
+<%= render 'home/footer' %>
