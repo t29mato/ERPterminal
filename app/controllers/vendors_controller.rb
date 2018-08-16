@@ -5,13 +5,38 @@ class VendorsController < ApplicationController
 
   def show
     @vendor = Vendor.find_by(id: params[:id])
-    category = [1,3,5,7]
-    current_quantity = [1000,5000,3000,8000]
 
-    @graph = LazyHighCharts::HighChart.new('graph') do |f|
-      f.title(text: 'ItemXXXの在庫の推移')
-      f.xAxis(categories: category)
-      f.series(name: '在庫数', data: current_quantity)
+    @graph = LazyHighCharts::HighChart.new('graph') do |r|
+      r.pane(size: '80%')
+      r.xAxis(
+        categories: ['企業安定性', '機能性', 'サポート体制', 'SEスキル', 'システム拡張性・将来性',
+            '改善提案力', '業界・業務ノウハウ', '製品価格'],
+        tickmarkPlacement: 'on',
+        lineWidth: 0
+      )
+      r.yAxis(
+        gridLineInterpolation: 'polygon',
+        lineWidth: 0,
+        min: 0,
+        max: 5,
+        tickInterval: 1
+      )
+      r.tooltip(
+        shared: true,
+        pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+      )
+      r.legend(
+        y: 70,
+      )
+      r.series(
+        ame: 'Allocated Budget',
+        data: [3.5, 2.8, 3.2, 3.7, 3.5, 4.0, 3.6, 2.5],
+        pointPlacement: 'on'
+      )
+      r.chart(
+        polar: true,
+        type: 'area'
+      )
     end
   end
 
