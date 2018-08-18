@@ -132,3 +132,34 @@
   position: relative;
   line-height: 1.65;
 }
+
+.questionList {
+  margin: -5px 0 0;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.questionList_item {
+  margin: 5px 1% 0 0;
+  border: 1px solid #d6dfe5;
+  width: 49%;
+  float: left;
+  display: flex;
+  background: #fff;
+  box-sizing: border-box;
+  align-items: center;
+  img {
+    width: 24px;
+    height: 24px;
+    margin-left: 30px
+  }
+}
+
+.questionList_link {
+  display: block;
+  margin: 0;
+  padding: 20px 20px;
+  position: relative;
+  text-align: left;
+  font-size: 13px;
+}
