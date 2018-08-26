@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'top' => "home#top"
   get 'about' => "home#about"
   get 'terms' => "home#terms"
+  get 'privacy' => "home#privacy"
 
   get 'vendors/index' => "vendors#index"
   # 極力最後にする必要のあるルーティング
