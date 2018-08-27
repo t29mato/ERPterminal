@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
 #----ユーザー情報------------------------
   get 'users/index' => "users#index"
+  get "/users/new" => "users#new"
+  post "/users/create" => "users#create"
 
 
 end
