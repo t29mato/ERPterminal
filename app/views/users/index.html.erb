@@ -1,0 +1,30 @@
+<%= render 'home/form' %>
+<main>
+  <div class="main">
+    <section class="container">
+      <div class="content-body">
+        <h2>ユーザー一覧</h2>
+        <div class="sortTab">
+          <ul>
+            <p>表示順</p>
+          </ul>
+        </div>
+      <div class="content-body">
+        <ul>
+          <% @users.each do |user| %>
+            <li>
+              <div class="searchCompanyArea">
+                <div>
+                  <%= user.id %>
+                  <%= user.mail_address %>
+                  <%= user.password %>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>
+<%= render 'home/footer' %>
