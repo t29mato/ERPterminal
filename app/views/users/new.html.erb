@@ -1,9 +1,19 @@
 <%= render 'home/form' %>
-<div class="main posts-new">
-  <div class="container">
-    <h1 class="form-heading">ユーザー登録する</h1>
-    <%= form_tag("/users/create") do %>
-      <%= render 'users/form_entry' %>
-    <% end %>
+<main>
+  <div class="main">
+    <div class="container">
+      <div class="content-body">
+        <h2>ユーザー新規登録</h1>
+          <div class="sortTab">
+            <ul>
+              <%= link_to("◀︎戻る", "/users/index") %>
+            </ul>
+          </div>
+        <%= form_tag("/users/create") do %>
+          <%= render 'users/form_entry' %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
+</main>
+<%= render 'home/footer' %>
