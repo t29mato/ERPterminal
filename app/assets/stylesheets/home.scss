@@ -97,9 +97,6 @@ figure {
   }
 }
 
-/* about ================================ */
-
-
 /* terms ================================ */
 .terms {
   text-align: left;
@@ -119,5 +116,20 @@ figure {
   ul li {
     margin-top: 15px;
     list-style-type: lower-latin;
+  }
+}
+
+/* about ================================ */
+.about {
+  margin-top: 5r0px;
+  text-align: center;
+  font-size: 14px;
+  h3 {
+    margin-top: 20px;
+    font-weight: 200;
+  }
+  .voice {
+    font-weight: 400;
+    color: #2b81e0;
   }
 }
