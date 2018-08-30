@@ -1,3 +1,29 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.userList {
+  display: flex;
+  justify-content: center;
+  div{
+    padding: 0px 5px;
+  }
+  .number {
+    width: 40px;
+    a {
+      font-size: 12px;
+    }
+  }
+  .nickname {
+    width: 120px;
+    flex-grow: 1;
+  }
+  .mail_address {
+    width: 200px;
+    flex-grow: 2;
+  }
+  .password {
+    width: 120px;
+    flex-grow: 1;
+  }
+}

@@ -13,12 +13,14 @@
         <ul>
           <% @users.each do |user| %>
             <li>
-              <div class="searchCompanyArea">
-                <div>
-                  <%= user.id %>
-                  <%= user.mail_address %>
-                  <%= user.password %>
-                </div>
+              <div class="userList">
+                <div class="number"><%= user.id %></div>
+                <div class="nickname"><%= user.nickname %></div>
+                <div class="mail_address"><%= user.mail_address %></div>
+                <div class="password"><%= user.password %></div>
+                <div class="number"><%= link_to("編集", "/users/#{user.id}/edit") %></div>
+                <div class="number"><%= link_to("削除", "/users/#{user.id}/destroy",
+                    {method: "post",data: { confirm: 'Sure?' }}) %></div>
               </div>
             </li>
           <% end %>
