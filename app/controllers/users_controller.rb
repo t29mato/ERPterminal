@@ -10,9 +10,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_adjust_params)
-    pp "********************"
-    pp @user
-    pp "********************"
     if @user.save
       flash[:notice] = "ユーザ登録完了しました"
       redirect_to("/users/index")

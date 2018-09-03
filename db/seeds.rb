@@ -20,3 +20,13 @@ User.create(mail_address: "maekawa@gmail.com", password: "password", nickname: "
 User.create(mail_address: "tokuma@gmail.com", password: "password", nickname: "tokuma")
 User.create(mail_address: "inagaki@gmail.com", password: "password", nickname: "inagaki")
 User.create(mail_address: "wakita@gmail.com", password: "password", nickname: "wakita")
+
+# カテゴリ情報を初期設定
+Category.create(name: "企業安定性")
+Category.create(name: "機能性")
+Category.create(name: "サポート体制")
+Category.create(name: "SEスキル")
+Category.create(name: "システム拡張性・将来性")
+Category.create(name: "改善提案力")
+Category.create(name: "業界・業務ノウハウ")
+Category.create(name: "製品価格")
