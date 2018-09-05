@@ -5,12 +5,12 @@ class VendorsController < ApplicationController
 
   def show
     @vendor = Vendor.find_by(id: params[:id])
+    @categories = Category.all
 
     @graph = LazyHighCharts::HighChart.new('graph') do |r|
       r.pane(size: '80%')
       r.xAxis(
-        categories: ['企業安定性', '機能性', 'サポート体制', 'SEスキル', 'システム拡張性・将来性',
-            '改善提案力', '業界・業務ノウハウ', '製品価格'],
+        categories: Category.pluck(:name),
         tickmarkPlacement: 'on',
         lineWidth: 0
       )
