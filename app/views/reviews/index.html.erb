@@ -1,0 +1,36 @@
+<%= render 'home/form' %>
+<main>
+  <div class="main">
+    <div class="currentPath">
+      <a href="/top">HOME</a> >
+      <a href="/vendors/index">INDEX</a>
+    </div>
+    <section class="container">
+      <div class="content-body">
+        <h2>口コミ一覧</h2>
+        <div class="sortTab">
+          <ul>
+            <p>表示順：</p>
+            <li>
+              <a href="/vendors/index">口コミ数</a>
+            </li>
+            <li>
+              <a href="/vendors/index">ランキング</a>
+            </li>
+          </ul>
+        </div>
+        <% @reviews.each do |review| %>
+          <article>
+            <div class="article-header">
+              <%= link_to("#{review.content}", "/reviews/#{review.id}") %>
+            </div>
+            <div class="article-body">
+              <a href="/top"><%= review.score %></a>
+            </div>
+          </article>
+        <% end %>
+      </div>
+    </section>
+  </div>
+</main>
+<%= render 'home/footer' %>

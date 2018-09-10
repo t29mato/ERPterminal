@@ -14,6 +14,24 @@ Vendor.create(name: "東芝ソリューションズ")
 System.create(name: "OBIC7", vendor_id: 1, business_type: ["会計", "人事給与", "販売管理"])
 System.create(name: "GLOVIA", vendor_id: 2, business_type: ["会計", "人事給与", "販売管理"])
 
+# 口コミ情報を初期設定
+Review.create(
+  category_id:1,
+  vendor_id:1,
+  system_id:1,
+  user_id:1,
+  score:4.0,
+  content:"サポートが良い"
+)
+Review.create(
+  category_id:2,
+  vendor_id:1,
+  system_id:1,
+  user_id:1,
+  score:4.5,
+  content:"業界に詳しい"
+)
+
 # ユーザー情報を初期設定
 User.create(mail_address: "sekiya@gmail.com", password: "password", nickname: "sekiya")
 User.create(mail_address: "maekawa@gmail.com", password: "password", nickname: "maekawa")

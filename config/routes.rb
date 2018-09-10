@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   # 極力最後にする必要のあるルーティング
   get 'systems/:id' => "systems#show"
 
+#----口コミ情報------------------------
+  get 'reviews/index' => "reviews#index"
+  # 極力最後にする必要のあるルーティング
+  get 'reviews/:id' => "reviews#show"
+
 #----ユーザー情報------------------------
   get 'users/index' => "users#index"
   get "/users/new" => "users#new"
