@@ -22,10 +22,12 @@
         <% @reviews.each do |review| %>
           <article>
             <div class="article-header">
-              <%= link_to("#{review.content}", "/reviews/#{review.id}") %>
+              <div class="categoryImageArea"><%= image_tag("categoryItem/#{review.category_id}.jpg") %></div>
+              <%= link_to("#{review.category_id}", "/reviews/#{review.id}") %>
             </div>
             <div class="article-body">
               <a href="/top"><%= review.score %></a>
+              <%= link_to("#{review.content}", "/reviews/#{review.id}") %>
             </div>
           </article>
         <% end %>
