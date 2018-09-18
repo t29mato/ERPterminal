@@ -8,14 +8,33 @@ article {
 
 .article-header {
   border-bottom: 1px solid #e9e9e9;
-  padding: 18px 10px 11px 38px;
+  height: 60px;
+  padding: 15px;
   margin: 0 20px;
+  img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+  }
+  p {
+    font-size: 12px;
+    float: right;
+  }
 }
 
 .categoryImageArea {
-  // height: 40px;
+  padding-left: 40px;
+  margin-left: 5px;
+  vertical-align: middle;
+  display: inline;
+  a {
+    font-size: 16px;
+  }
 }
 
 .article-body {
-  padding: 20px;
+  padding-left: 30px;
+  span {
+    font-size: 14px;
+  }
 }

@@ -22,12 +22,26 @@
         <% @reviews.each do |review| %>
           <article>
             <div class="article-header">
-              <div class="categoryImageArea"><%= image_tag("categoryItem/#{review.category_id}.jpg") %></div>
+              <%= image_tag("categoryItem/#{review.category_id}.jpg") %>
+              <div class="categoryImageArea">
               <%= link_to("#{review.category_id}", "/reviews/#{review.id}") %>
+              組織体制について
+              </div>
+              <p>回答日：2018年9月19日</p>
             </div>
             <div class="article-body">
-              <a href="/top"><%= review.score %></a>
-              <%= link_to("#{review.content}", "/reviews/#{review.id}") %>
+              <dl>
+                <dt>
+                  <span>回答者：</span>
+                  <a href="/top">不動産業</a>、
+                  <a href="/top">導入3~5年</a>
+                  <a href="/top">経理・財務部</a>
+                </dt>
+                <dd>
+                  <a href="/top"><%= review.score %></a>
+                  <%= link_to("#{review.content}", "/reviews/#{review.id}") %>
+                </dd>
+              </dl>
             </div>
           </article>
         <% end %>
