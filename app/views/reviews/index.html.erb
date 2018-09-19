@@ -34,12 +34,16 @@
                 <dt>
                   <span>回答者：</span>
                   <a href="/top">不動産業</a>、
-                  <a href="/top">導入3~5年</a>
+                  <a href="/top">導入3~5年</a>、
                   <a href="/top">経理・財務部</a>
+                  <div class="totalRating-item">
+                    <div class="star-front" style="width: 60px;">★★★★★</div>
+                    <div class="star-back">★★★★★</div>
+                    <div class="rating-num"><%= review.score %></div>
+                  </div>
                 </dt>
                 <dd>
-                  <a href="/top"><%= review.score %></a>
-                  <%= link_to("#{review.content}", "/reviews/#{review.id}") %>
+                  <%= review.content %>
                 </dd>
               </dl>
             </div>
