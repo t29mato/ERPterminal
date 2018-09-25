@@ -1,0 +1,35 @@
+<div class="title">
+  <h3>ユーザーの口コミ一覧</h3>
+</div>
+<div class="content-body">
+  <% @reviews.each do |review| %>
+    <article>
+      <div class="article-header">
+        <%= image_tag("categoryItem/#{review.category_id}.jpg") %>
+        <div class="categoryImageArea">
+        <%= link_to("#{review.category_id}", "/reviews/#{review.id}") %>
+        組織体制について
+        </div>
+        <p>回答日：2018年9月19日</p>
+      </div>
+      <div class="article-body">
+        <dl>
+          <dt>
+            <span>回答者：</span>
+            <a href="/top">不動産業</a>、
+            <a href="/top">導入3~5年</a>、
+            <a href="/top">経理・財務部</a>
+            <div class="totalRating-item">
+              <div class="star-front" style="width: 60px;">★★★★★</div>
+              <div class="star-back">★★★★★</div>
+              <div class="rating-num"><%= review.score %></div>
+            </div>
+          </dt>
+          <dd>
+            <%= review.content %>
+          </dd>
+        </dl>
+      </div>
+    </article>
+  <% end %>
+</div>
