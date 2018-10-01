@@ -7,10 +7,9 @@
       <div class="article-header">
         <%= image_tag("categoryItem/#{review.category_id}.jpg") %>
         <div class="categoryImageArea">
-        <%= link_to("#{review.category_id}", "/reviews/#{review.id}") %>
-        組織体制について
+        <%= link_to("#{review.get_category_name}について", "/reviews/#{review.id}") %>
         </div>
-        <p>回答日：2018年9月19日</p>
+        <p>回答日：<%= review.updated_at.strftime("%Y年%m月%d日") %></p>
       </div>
       <div class="article-body">
         <dl>
