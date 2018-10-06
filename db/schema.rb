@@ -43,6 +43,10 @@ ActiveRecord::Schema.define(version: 20181006133019) do
     t.string "nickname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "industry_type"
+    t.string "section"
+    t.string "company"
+    t.string "working_period"
   end
 
   create_table "vendors", force: :cascade do |t|
