@@ -33,11 +33,11 @@ Review.create(
 )
 
 # ユーザー情報を初期設定
-User.create(mail_address: "sekiya@gmail.com", password: "password", nickname: "sekiya")
-User.create(mail_address: "maekawa@gmail.com", password: "password", nickname: "maekawa")
-User.create(mail_address: "tokuma@gmail.com", password: "password", nickname: "tokuma")
-User.create(mail_address: "inagaki@gmail.com", password: "password", nickname: "inagaki")
-User.create(mail_address: "wakita@gmail.com", password: "password", nickname: "wakita")
+User.create(mail_address: "sekiya@gmail.com", password: "password", nickname: "sekiya", industry_type: "メーカー", section: "経理・財務部門", company: "オービック", point: 0)
+User.create(mail_address: "maekawa@gmail.com", password: "password", nickname: "maekawa", industry_type: "商社・卸売", section: "情報システム部門", company: "オービック", point: 0)
+User.create(mail_address: "tokuma@gmail.com", password: "password", nickname: "tokuma", industry_type: "建設工事", section: "人事・総務部門", company: "オービック", point: 0)
+User.create(mail_address: "inagaki@gmail.com", password: "password", nickname: "inagaki", industry_type: "小売・流通", section: "営業・業務部門", company: "オービック", point: 0)
+User.create(mail_address: "wakita@gmail.com", password: "password", nickname: "wakita", industry_type: "不動産関連", section: "経営企画部門", company: "オービック", point: 0)
 
 # カテゴリ情報を初期設定
 Category.create(name: "企業安定性")

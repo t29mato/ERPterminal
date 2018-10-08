@@ -3,6 +3,6 @@ class AddColumnUsers < ActiveRecord::Migration[5.1]
     add_column :users, :industry_type, :string
     add_column :users, :section, :string
     add_column :users, :company, :string
-    add_column :users, :working_period, :string
+    add_column :users, :point, :integer
   end
 end
