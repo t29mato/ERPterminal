@@ -28,7 +28,9 @@
         <% @categories.each do |category| %>
           <li class="questionList_item">
             <%= image_tag('販売.jpg') %>
-            <a href="/reviews/index" class="questionList_link"><%= "#{category.name}" %></a>
+            <div class="questionList_link">
+              <%= link_to("#{category.name}", "/vendors/#{@vendor.id}") %>
+            </div>
           </li>
         <% end %>
       </ul>
