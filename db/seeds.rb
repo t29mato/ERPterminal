@@ -61,3 +61,11 @@ Industry_type.create(name: "運輸・物流")
 Industry_type.create(name: "情報サービス")
 Industry_type.create(name: "金融")
 Industry_type.create(name: "その他")
+
+# 業務種別情報を初期設定
+Business_type.create(name: "製造・原価管理")
+Business_type.create(name: "販売・購買管理")
+Business_type.create(name: "プロジェクト案件管理")
+Business_type.create(name: "不動産管理")
+Business_type.create(name: "財務会計・管理会計")
+Business_type.create(name: "人事給与勤怠")
