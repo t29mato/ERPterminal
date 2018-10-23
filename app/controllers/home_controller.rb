@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def top
-    @hello = "TopPage"
+    @business_types = BusinessType.all
   end
 
   def about

@@ -14,46 +14,16 @@
   <div class="container">
     <div class="searchIMG"><%= image_tag('カテゴリ.jpg') %></div>
     <h2>業務領域から探す</h2>
-    <div class="item-box">
-      <a href="/vendors/index">
-        <figure>
-          <%= image_tag('製造.jpg') %>
-          <figcaption>製造・原価管理</figcaption>
-        </figure>
-      </a>
-      <a href="/vendors/index">
-        <figure>
-          <%= image_tag('販売.jpg') %>
-          <figcaption>販売・購買管理</figcaption>
-        </figure>
-    </a>
-    <a href="/vendors/index">
-      <figure>
-        <%= image_tag('プロジェクト.jpg') %>
-        <figcaption>プロジェクト案件管理</figcaption>
-      </figure>
-    </a>
-    </div>
-    <div class="item-box">
-      <a href="/vendors/index">
-        <figure>
-          <%= image_tag('不動産.jpg') %>
-          <figcaption>不動産管理</figcaption>
-        </figure>
-      </a>
-      <a href="/vendors/index">
-        <figure>
-          <%= image_tag('会計.jpg') %>
-          <figcaption>財務会計・管理会計</figcaption>
-        </figure>
-      </a>
-      <a href="/vendors/index">
-        <figure>
-          <%= image_tag('人事.jpg') %>
-          <figcaption>人事給与勤怠</figcaption>
-        </figure>
-      </a>
-    </div>
+    <% @business_types.each do |business_type| %>
+      <div class="item-box">
+        <a href="/vendors/index">
+          <figure>
+            <%= image_tag("businessTypeItem/#{business_type.id}.jpg") %>
+            <figcaption><%= "#{business_type.name}"%></figcaption>
+          </figure>
+        </a>
+      </div>
+    <% end %>
   </div>
 </div>
 <div class="main">
@@ -63,13 +33,13 @@
     <div class="item-box">
       <a href="/vendors/index">
         <figure>
-          <%= image_tag('製造.jpg') %>
+          <%= image_tag('製造・原価管理.jpg') %>
           <figcaption>メーカー</figcaption>
         </figure>
       </a>
       <a href="/vendors/index">
         <figure>
-          <%= image_tag('販売.jpg') %>
+          <%= image_tag('販売・購買管理.jpg') %>
           <figcaption>商社・卸売</figcaption>
         </figure>
       </a>
@@ -89,7 +59,7 @@
       </a>
       <a href="/vendors/index">
         <figure>
-          <%= image_tag('不動産.jpg') %>
+          <%= image_tag('不動産管理.jpg') %>
           <figcaption>不動産関連</figcaption>
         </figure>
       </a>
