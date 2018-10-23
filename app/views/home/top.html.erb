@@ -14,16 +14,21 @@
   <div class="container">
     <div class="searchIMG"><%= image_tag('カテゴリ.jpg') %></div>
     <h2>業務領域から探す</h2>
-    <% @business_types.each do |business_type| %>
-      <div class="item-box">
-        <a href="/vendors/index">
-          <figure>
-            <%= image_tag("businessTypeItem/#{business_type.id}.jpg") %>
-            <figcaption><%= "#{business_type.name}"%></figcaption>
-          </figure>
-        </a>
-      </div>
-    <% end %>
+    <div class="item-box">
+      <% @business_types.each do |business_type| %>
+      <!-- 改行してデザイン調整するため -->
+        <% if business_type.id == 4 %>
+          </div><div class="item-box">
+        <% end %>
+      <!-- ここまで -->
+          <a href="/vendors/index">
+            <figure>
+              <%= image_tag("businessTypeItem/#{business_type.id}.jpg") %>
+              <figcaption><%= "#{business_type.name}"%></figcaption>
+            </figure>
+          </a>
+      <% end %>
+    </div>
   </div>
 </div>
 <div class="main">
@@ -31,64 +36,22 @@
     <div class="searchIMG"><%= image_tag('業界.jpg') %></div>
     <h2>所属している業界から探す</h2>
     <div class="item-box">
-      <a href="/vendors/index">
-        <figure>
-          <%= image_tag('製造・原価管理.jpg') %>
-          <figcaption>メーカー</figcaption>
-        </figure>
-      </a>
-      <a href="/vendors/index">
-        <figure>
-          <%= image_tag('販売・購買管理.jpg') %>
-          <figcaption>商社・卸売</figcaption>
-        </figure>
-      </a>
-      <a href="/vendors/index">
-        <figure>
-          <%= image_tag('建設工事.jpg') %>
-          <figcaption>建設工事</figcaption>
-        </figure>
-      </a>
-    </div>
-    <div class="item-box">
-      <a href="/vendors/index">
-        <figure>
-          <%= image_tag('小売.jpg') %>
-          <figcaption>小売・流通</figcaption>
-        </figure>
-      </a>
-      <a href="/vendors/index">
-        <figure>
-          <%= image_tag('不動産管理.jpg') %>
-          <figcaption>不動産関連</figcaption>
-        </figure>
-      </a>
-      <a href="/vendors/index">
-        <figure>
-          <%= image_tag('物流.jpg') %>
-          <figcaption>運輸・物流</figcaption>
-        </figure>
-      </a>
-    </div>
-    <div class="item-box">
-      <a href="/vendors/index">
-        <figure>
-          <%= image_tag('情報サービス.jpg') %>
-          <figcaption>情報サービス</figcaption>
-        </figure>
-      </a>
-      <a href="/vendors/index">
-        <figure>
-          <%= image_tag('金融.jpg') %>
-          <figcaption>金融</figcaption>
-        </figure>
-      </a>
-      <a href="/vendors/index">
-        <figure>
-          <%= image_tag('その他.jpg') %>
-          <figcaption>その他</figcaption>
-        </figure>
-      </a>
+      <% @industry_types.each do |industry_type| %>
+          <!-- 改行してデザイン調整するため -->
+            <% if industry_type.id == 4 %>
+              </div><div class="item-box">
+            <% end %>
+            <% if industry_type.id == 7 %>
+              </div><div class="item-box">
+            <% end %>
+          <!-- ここまで -->
+          <a href="/vendors/index">
+            <figure>
+              <%= image_tag("industryTypeItem/#{industry_type.id}.jpg") %>
+              <figcaption><%= "#{industry_type.name}"%></figcaption>
+            </figure>
+          </a>
+      <% end %>
     </div>
   </div>
 </div>
