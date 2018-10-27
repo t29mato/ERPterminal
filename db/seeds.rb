@@ -80,3 +80,12 @@ BusinessType.create(name: "プロジェクト案件管理")
 BusinessType.create(name: "不動産管理")
 BusinessType.create(name: "財務会計・管理会計")
 BusinessType.create(name: "人事給与勤怠")
+
+# 部署情報を初期設定
+Section.create(name: "経営層・経営企画")
+Section.create(name: "経理・財務")
+Section.create(name: "人事・総務")
+Section.create(name: "情報システム")
+Section.create(name: "業務・事務")
+Section.create(name: "営業・企画")
+Section.create(name: "その他")
