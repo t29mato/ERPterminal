@@ -14,6 +14,19 @@ Vendor.create(name: "東芝ソリューションズ")
 System.create(name: "OBIC7", vendor_id: 1, business_type: ["会計", "人事給与", "販売管理"])
 System.create(name: "GLOVIA", vendor_id: 2, business_type: ["会計", "人事給与", "販売管理"])
 
+# システム情報を初期設定
+VendorSystem.create(vendor_id: 1, system_id:1)
+VendorSystem.create(vendor_id: 2, system_id:1)
+VendorSystem.create(vendor_id: 3, system_id:1)
+VendorSystem.create(vendor_id: 4, system_id:1)
+VendorSystem.create(vendor_id: 5, system_id:1)
+VendorSystem.create(vendor_id: 6, system_id:1)
+VendorSystem.create(vendor_id: 7, system_id:1)
+VendorSystem.create(vendor_id: 1, system_id:2)
+VendorSystem.create(vendor_id: 4, system_id:2)
+VendorSystem.create(vendor_id: 5, system_id:2)
+VendorSystem.create(vendor_id: 6, system_id:2)
+
 # 口コミ情報を初期設定
 Review.create(
   category_id:1,

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181021212940) do
+ActiveRecord::Schema.define(version: 20181027091526) do
 
   create_table "business_types", force: :cascade do |t|
     t.string "name"
@@ -60,6 +60,15 @@ ActiveRecord::Schema.define(version: 20181021212940) do
     t.string "section"
     t.string "company"
     t.integer "point"
+  end
+
+  create_table "vendor_systems", force: :cascade do |t|
+    t.integer "vendor_id"
+    t.integer "system_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["system_id"], name: "index_vendor_systems_on_system_id"
+    t.index ["vendor_id"], name: "index_vendor_systems_on_vendor_id"
   end
 
   create_table "vendors", force: :cascade do |t|
