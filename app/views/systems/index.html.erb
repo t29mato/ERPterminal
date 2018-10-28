@@ -3,6 +3,5 @@
 <% @systems.each do |system| %>
   <div>
     <%= link_to("#{system.name}", "/systems/#{system.id}") %>
-    <a href="/top"><%= system.business_type %></a>
   </div>
 <% end %>
