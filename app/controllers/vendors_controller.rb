@@ -6,7 +6,8 @@ class VendorsController < ApplicationController
   def show
     @vendor = Vendor.find_by(id: params[:id])
     @categories = Category.all
-    @reviews = @vendor.reviews
+    @vendor_systems = @vendor.get_vendor_systems
+    @reviews = @vendor.get_reviews(@vendor_systems)
 
     @graph = LazyHighCharts::HighChart.new('graph') do |r|
       r.pane(size: '80%')

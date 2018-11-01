@@ -15,9 +15,9 @@
         <dl>
           <dt>
             <span>回答者：</span>
-            <a href="/top"><%= review.get_user.industry_type %></a>、
+            <a href="/top"><%= review.get_industry_type_name(review.get_user.industry_type_id) %></a>、
             <a href="/top"><%= review.working_period %></a>、
-            <a href="/top"><%= review.get_user.section %></a>
+            <a href="/top"><%= review.get_section_name(review.get_user.section_id) %></a>
             <div class="totalRating-item">
               <div class="star-front" style="width: <%=review.score*17%>px;">★★★★★</div>
               <div class="star-back">★★★★★</div>
