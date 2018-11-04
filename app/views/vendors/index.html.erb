@@ -45,7 +45,7 @@
                     システム：
                     <% vendor.get_systems(vendor.get_vendor_systems).each do |system| %>
                       <div class="system-name">
-                        <%= link_to("#{system.name[0,5]}…", "/systems/#{system.id}") %>
+                        <%= link_to("#{system.name[0,6]}…", "/systems/#{system.id}") %>
                       </div>
                     <% end %>
                   </div>
