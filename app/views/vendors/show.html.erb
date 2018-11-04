@@ -7,13 +7,15 @@
       <a><%= @vendor.name %></a>
     </div>
     <section class="container">
-      <div class="content-body">
+      <div class="contentsHeader_text">
         <h2><%= @vendor.name %></h2>
         <div class="totalRating-item">
           <div class="star-front" style="width: <%= @vendor.id+33 %>px;">★★★★★</div>
           <div class="star-back">★★★★★</div>
           <div class="rating-num"><%= "#{@vendor.id}.5" %></div>
         </div>
+        <div class="targetLogoImage">
+        <%= image_tag("vendorLogo/#{@vendor.id}.png") %></div>
       </div>
       <div class="title">
         <h3>ユーザーによる評価スコア</h3>

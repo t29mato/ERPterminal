@@ -21,7 +21,7 @@ Vendor.create(id: 99 , name: "その他のベンダー")
 
 
 # システム情報を初期設定
-System.create(name: "OBIC7")
+System.create(name: "OBIC7(オービックセブン)")
 System.create(name: "GLOVIA(グロービア)")
 System.create(name: "SAP(サップ)")
 System.create(name: "Oracle(オラクル)")
