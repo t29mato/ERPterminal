@@ -43,15 +43,11 @@
                   </div>
                   <div class="companyItem">
                     システム：
-                    <div class="system-name">
-                      <%= link_to("OBIC7", "/vendors/#{vendor.id}") %>
-                    </div>
-                    <div class="system-name">
-                      <%= link_to("COMPANY", "/vendors/#{vendor.id}") %>
-                    </div>
-                    <div class="system-name">
-                      <%= link_to("GLOVIA", "/vendors/#{vendor.id}") %>
-                    </div>
+                    <% vendor.get_systems(vendor.get_vendor_systems).each do |system| %>
+                      <div class="system-name">
+                        <%= link_to("#{system.name[0,5]}…", "/systems/#{system.id}") %>
+                      </div>
+                    <% end %>
                   </div>
                 </div>
               </div>
