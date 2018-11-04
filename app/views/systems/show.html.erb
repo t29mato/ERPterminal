@@ -1,4 +1,41 @@
 <%= render 'home/form' %>
-<h1>システム詳細</h1>
-<p>id：<%= @system.id %></p>
-<p><%= @system.name %></p>
+<main>
+  <div class="main">
+    <div class="currentPath">
+      <a href="/top">HOME</a> >
+      <a href="/systems/index">システム一覧</a> >
+      <a><%= @system.name %></a>
+    </div>
+    <section class="container">
+      <div class="content-body">
+        <h2><%= @system.name %></h2>
+        <div class="totalRating-item">
+          <div class="star-front" style="width: <%= @system.id+33 %>px;">★★★★★</div>
+          <div class="star-back">★★★★★</div>
+          <div class="rating-num"><%= "#{@system.id}.5" %></div>
+        </div>
+      </div>
+      <div class="title">
+        <h3>ユーザーによる評価スコア</h3>
+      </div>
+      <div class="averageScore">
+        <%= high_chart("sample", @graph) %>
+      </div>
+      <div class="title">
+        <h3>カテゴリ別 ユーザーの口コミ</h3>
+      </div>
+      <ul class="questionList">
+        <% @categories.each do |category| %>
+          <li class="questionList_item">
+            <%= image_tag('業界.jpg') %>
+            <div class="questionList_link">
+              <%= link_to("#{category.name}", "/systems/#{@system.id}") %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+      <%= render 'reviews/index' %>
+    </section>
+  </div>
+</main>
+<%= render 'home/footer' %>
