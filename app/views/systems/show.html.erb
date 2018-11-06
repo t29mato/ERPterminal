@@ -29,7 +29,7 @@
       <ul class="questionList">
         <% @categories.each do |category| %>
           <li class="questionList_item">
-            <%= image_tag('業界.jpg') %>
+            <%= image_tag("categoryItem/#{category.id}.jpg") %>
             <div class="questionList_link">
               <%= link_to("#{category.name}", "/systems/#{@system.id}") %>
             </div>

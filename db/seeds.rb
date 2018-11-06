@@ -17,6 +17,7 @@ Vendor.create(name: "日本アイ・ビー・エム(IBM)")
 Vendor.create(name: "大塚商会")
 Vendor.create(name: "東計電算")
 Vendor.create(name: "コンシスト")
+Vendor.create(name: "ビジネス・アソシエイツ")
 Vendor.create(id: 99 , name: "その他のベンダー")
 
 
@@ -70,6 +71,8 @@ VendorSystem.create(vendor_id: 3, system_id: 20)
 VendorSystem.create(vendor_id: 4, system_id: 10)
 VendorSystem.create(vendor_id: 4, system_id: 11)
 VendorSystem.create(vendor_id: 5, system_id: 3)
+VendorSystem.create(vendor_id: 5, system_id: 7)
+VendorSystem.create(vendor_id: 5, system_id: 8)
 VendorSystem.create(vendor_id: 5, system_id: 12)
 VendorSystem.create(vendor_id: 5, system_id: 13)
 VendorSystem.create(vendor_id: 6, system_id: 3)
@@ -99,6 +102,7 @@ VendorSystem.create(vendor_id: 16, system_id: 24)
 VendorSystem.create(vendor_id: 16, system_id: 25)
 VendorSystem.create(vendor_id: 16, system_id: 26)
 VendorSystem.create(vendor_id: 17, system_id: 27)
+VendorSystem.create(vendor_id: 18, system_id: 22)
 
 
 # 口コミ情報を初期設定

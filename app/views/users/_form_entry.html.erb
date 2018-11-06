@@ -1,32 +1,40 @@
 <div class="form">
-  <div class="form-body">
-    <div>
-      <div>メールアドレス</div>
-      <input type="text" name="user[mail_address]" value="<%= @user.mail_address %>">
-      <% if @user.errors.messages[:mail_address].any? %>
-      <span class="form-error">
-        <%= @user.errors.messages[:mail_address][0] %></p>
-      </span>
-      <% end %>
-    </div>
-    <div>
-      <div>パスワード</div>
-      <input type="password" name="user[password]" value="<%= @user.password %>">
-      <% if @user.errors.messages[:password].any? %>
-      <span class="form-error">
-        <%= @user.errors.messages[:password][0] %></p>
-      </span>
-      <% end %>
-    </div>
-    <div>
-      <div>ニックネーム</div>
-      <input type="text" name="user[nickname]" value="<%= @user.nickname %>">
-      <% if @user.errors.messages[:nickname].any? %>
-      <span class="form-error">
-        <%= @user.errors.messages[:nickname][0] %></p>
-      </span>
-      <% end %>
-    </div>
+  <table>
+    <tr>
+      <th>メールアドレス</th>
+      <th>
+        <input type="text" name="user[mail_address]" value="<%= @user.mail_address %>">
+        <% if @user.errors.messages[:mail_address].any? %>
+        <span class="form-error">
+          <%= @user.errors.messages[:mail_address][0] %></p>
+        </span>
+        <% end %>
+      </th>
+    </tr>
+    <tr>
+      <th>パスワード</th>
+      <th>
+        <input type="password" name="user[password]" value="<%= @user.password %>">
+        <% if @user.errors.messages[:password].any? %>
+        <span class="form-error">
+          <%= @user.errors.messages[:password][0] %></p>
+        </span>
+        <% end %>
+      </th>
+    </tr>
+    <tr>
+      <th>ニックネーム</th>
+      <th>
+        <input type="text" name="user[nickname]" value="<%= @user.nickname %>">
+        <% if @user.errors.messages[:nickname].any? %>
+        <span class="form-error">
+          <%= @user.errors.messages[:nickname][0] %></p>
+        </span>
+        <% end %>
+      </th>
+    </tr>
+  </table>
+  <div>
     <input type="submit" value="ユーザ登録">
   </div>
 </div>
