@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  before_action :get_section_and_industry_type_name
+
+
   def index
     @users = User.all.order(id: 'asc')
   end
@@ -46,6 +49,11 @@ class UsersController < ApplicationController
     user_params = params.require(:user).permit(:mail_address, :password, :nickname)
     user_hash = user_params.to_h
     return user_hash
+  end
+
+  def get_section_and_industry_type_name
+    @sections = Section.all
+    @industry_types = IndustryType.all
   end
 
 end

@@ -1,40 +1,62 @@
 <div class="form">
   <table class="table-form">
     <tr>
-      <th>メールアドレス</th>
-      <th>
-        <input type="text" name="user[mail_address]" value="<%= @user.mail_address %>">
+      <th class="table-form_tableHeader">メールアドレス（ID）</th>
+      <td class="table-form_tableData">
+        <input class="textarea" type="text" name="user[mail_address]" value="<%= @user.mail_address %>">
         <% if @user.errors.messages[:mail_address].any? %>
         <span class="form-error">
           <%= @user.errors.messages[:mail_address][0] %></p>
         </span>
         <% end %>
-      </th>
+        <span>ログイン時のIDとなります。</span>
+      </td>
     </tr>
     <tr>
-      <th>パスワード</th>
-      <th>
-        <input type="password" name="user[password]" value="<%= @user.password %>">
+      <th class="table-form_tableHeader">パスワード</th>
+      <td class="table-form_tableData">
+        <input class="textarea" type="password" name="user[password]" value="<%= @user.password %>">
         <% if @user.errors.messages[:password].any? %>
         <span class="form-error">
           <%= @user.errors.messages[:password][0] %></p>
         </span>
         <% end %>
-      </th>
+        <span>6文字以上、12文字以内でご入力ください。</span>
+      </td>
     </tr>
     <tr>
-      <th>ニックネーム</th>
-      <th>
-        <input type="text" name="user[nickname]" value="<%= @user.nickname %>">
+      <th class="table-form_tableHeader">氏名</th>
+      <td class="table-form_tableData">
+        <input class="textarea" type="text" name="user[nickname]" value="<%= @user.nickname %>">
         <% if @user.errors.messages[:nickname].any? %>
         <span class="form-error">
           <%= @user.errors.messages[:nickname][0] %></p>
         </span>
         <% end %>
-      </th>
+        <span>本サイト上には一切掲載されません。</span>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-form_tableHeader">会社名</th>
+      <td class="table-form_tableData">
+        <input class="textarea" type="text" name="user[company]" value="<%= @user.company %>">
+        <span>本サイト上には一切掲載されません。</span>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-form_tableHeader">所属業界</th>
+      <td class="table-form_tableData">
+        <%= collection_select :user, :industry_type_id, @industry_types, :id, :name, :selected => @user.industry_type_id %>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-form_tableHeader">部署</th>
+      <td class="table-form_tableData">
+        <%= collection_select :user, :section_id, @sections, :id, :name, :selected => @user.section_id %>
+      </td>
     </tr>
   </table>
   <div>
-    <input type="submit" value="ユーザ登録">
+    <input class="button" type="submit" value="ユーザ登録">
   </div>
 </div>
