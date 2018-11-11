@@ -1,19 +1,25 @@
 <div class="form">
   <table class="table-form">
     <tr>
-      <th class="table-form_tableHeader">メールアドレス（ID）</th>
+      <th class="table-form_tableHeader">
+        <span>メールアドレス（ID）</span>
+        <span class="fc-red">＊</span>
+      </th>
       <td class="table-form_tableData">
         <input class="textarea" type="text" name="user[mail_address]" value="<%= @user.mail_address %>">
         <% if @user.errors.messages[:mail_address].any? %>
-        <span class="form-error">
+        <span class="d-b">
           <%= @user.errors.messages[:mail_address][0] %></p>
         </span>
         <% end %>
-        <span>ログイン時のIDとなります。</span>
+        <span class="d-b">ログイン時のIDとなります。</span>
       </td>
     </tr>
     <tr>
-      <th class="table-form_tableHeader">パスワード</th>
+      <th class="table-form_tableHeader">
+        <span>パスワード</span>
+        <span class="fc-red">＊</span>
+      </th>
       <td class="table-form_tableData">
         <input class="textarea" type="password" name="user[password]" value="<%= @user.password %>">
         <% if @user.errors.messages[:password].any? %>
@@ -21,11 +27,14 @@
           <%= @user.errors.messages[:password][0] %></p>
         </span>
         <% end %>
-        <span>6文字以上、12文字以内でご入力ください。</span>
+        <span class="d-b">6文字以上、12文字以内でご入力ください。</span>
       </td>
     </tr>
     <tr>
-      <th class="table-form_tableHeader">氏名</th>
+      <th class="table-form_tableHeader">
+        <span >氏名</span>
+        <span class="fc-red">＊</span>
+      </th>
       <td class="table-form_tableData">
         <input class="textarea" type="text" name="user[nickname]" value="<%= @user.nickname %>">
         <% if @user.errors.messages[:nickname].any? %>
@@ -33,30 +42,42 @@
           <%= @user.errors.messages[:nickname][0] %></p>
         </span>
         <% end %>
-        <span>本サイト上には一切掲載されません。</span>
+        <span class="fc-red d-b">※本サイト上には一切掲載されません。</span>
       </td>
     </tr>
     <tr>
-      <th class="table-form_tableHeader">会社名</th>
+      <th class="table-form_tableHeader">
+        <span >会社名</span>
+        <span class="fc-red">＊</span>
+      </th>
       <td class="table-form_tableData">
         <input class="textarea" type="text" name="user[company]" value="<%= @user.company %>">
-        <span>本サイト上には一切掲載されません。</span>
+        <span class="fc-red d-b">※本サイト上には一切掲載されません。</span>
       </td>
     </tr>
     <tr>
-      <th class="table-form_tableHeader">所属業界</th>
+      <th class="table-form_tableHeader">
+        <span >所属業界</span>
+        <span class="fc-red">＊</span>
+      </th>
       <td class="table-form_tableData">
-        <%= collection_select :user, :industry_type_id, @industry_types, :id, :name, :selected => @user.industry_type_id %>
+        <%= collection_select :user, :industry_type_id, @industry_types, :id, :name, :prompt => "次から選択してください", :selected => @user.industry_type_id %>
       </td>
     </tr>
     <tr>
-      <th class="table-form_tableHeader">部署</th>
+      <th class="table-form_tableHeader">
+        <span >部署</span>
+        <span class="fc-red">＊</span>
+      </th>
       <td class="table-form_tableData">
-        <%= collection_select :user, :section_id, @sections, :id, :name, :selected => @user.section_id %>
+        <%= collection_select :user, :section_id, @sections, :id, :name, :prompt => "次から選択してください", :selected => @user.section_id %>
       </td>
     </tr>
   </table>
-  <div>
-    <input class="button" type="submit" value="ユーザ登録">
+  <div class="t-c mt-40 fs-12">
+    <p>ERPterminalの<a class="fs-12" href="/terms">利用規約</a>および<a class="fs-12" href="/privacy">プライバシーポリシー</a>に同意した上で、「同意してユーザー登録」を押して下さい。</p>
+  </div>
+  <div class="t-c mt-40">
+    <input class="button" type="submit" value="同意してユーザー登録">
   </div>
 </div>

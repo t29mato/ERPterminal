@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   private
 
   def user_adjust_params
-    user_params = params.require(:user).permit(:mail_address, :password, :nickname)
+    user_params = params.require(:user).permit(:mail_address, :password, :nickname, :company, :industry_type_id, :section_id)
     user_hash = user_params.to_h
     return user_hash
   end
