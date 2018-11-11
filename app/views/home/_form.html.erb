@@ -4,10 +4,13 @@
     <a href="/top">terminal</a>
   </div>
   <div class="header-menus">
-      <a href="/top">Top</a>
-      <a href="/about">About</a>
-      <a href="/vendors/index">ベンダー一覧</a>
-      <a href="/systems/index">システム一覧</a>
+    <a href="/about">ERPterminalとは？</a>
+    <% if @current_user %>
       <a href="/users/index">User一覧</a>
+      <%= link_to("【#{@current_user.nickname}】ログアウト", "/logout", {method: :post}) %>
+    <% else %>
+      <a class="fw-b" href="/login">ログイン</a>
+      <a class="fw-b" href="/users/new">新規登録</a>
+    <% end %>
   </div>
 </header>

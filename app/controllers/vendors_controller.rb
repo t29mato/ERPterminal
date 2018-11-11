@@ -1,4 +1,7 @@
 class VendorsController < ApplicationController
+
+  before_action :authenticate_user, {only: [:show]}
+
   def index
     @vendors = Vendor.all
   end
