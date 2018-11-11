@@ -19,6 +19,9 @@ class UsersController < ApplicationController
     else
       render '/users/new'
     end
+    p "---------------------"
+    pp @user.errors.messages
+    p "---------------------"
   end
 
   def edit

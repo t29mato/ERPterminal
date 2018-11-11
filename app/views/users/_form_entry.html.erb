@@ -8,11 +8,11 @@
       <td class="table-form_tableData">
         <input class="textarea" type="text" name="user[mail_address]" value="<%= @user.mail_address %>">
         <% if @user.errors.messages[:mail_address].any? %>
-        <span class="d-b">
+        <span class="d-b fc-red">
           <%= @user.errors.messages[:mail_address][0] %></p>
         </span>
         <% end %>
-        <span class="d-b">ログイン時のIDとなります。</span>
+        <span class="d-b fs-12">ログイン時のIDとなります。</span>
       </td>
     </tr>
     <tr>
@@ -23,36 +23,35 @@
       <td class="table-form_tableData">
         <input class="textarea" type="password" name="user[password]" value="<%= @user.password %>">
         <% if @user.errors.messages[:password].any? %>
-        <span class="form-error">
+        <span class="d-b fc-red">
           <%= @user.errors.messages[:password][0] %></p>
         </span>
         <% end %>
-        <span class="d-b">6文字以上、12文字以内でご入力ください。</span>
+        <span class="d-b fs-12">6文字以上、12文字以内でご入力ください。</span>
       </td>
     </tr>
     <tr>
       <th class="table-form_tableHeader">
-        <span >氏名</span>
+        <span >お名前</span>
         <span class="fc-red">＊</span>
+        <span class="d-b fs-12">（本サイトでは一切掲載されません）</span>
       </th>
       <td class="table-form_tableData">
         <input class="textarea" type="text" name="user[nickname]" value="<%= @user.nickname %>">
         <% if @user.errors.messages[:nickname].any? %>
-        <span class="form-error">
+        <span class="d-b fc-red">
           <%= @user.errors.messages[:nickname][0] %></p>
         </span>
         <% end %>
-        <span class="fc-red d-b">※本サイト上には一切掲載されません。</span>
       </td>
     </tr>
     <tr>
       <th class="table-form_tableHeader">
         <span >会社名</span>
-        <span class="fc-red">＊</span>
+        <span class="d-b fs-12">（本サイトでは一切掲載されません）</span>
       </th>
       <td class="table-form_tableData">
         <input class="textarea" type="text" name="user[company]" value="<%= @user.company %>">
-        <span class="fc-red d-b">※本サイト上には一切掲載されません。</span>
       </td>
     </tr>
     <tr>
@@ -62,6 +61,11 @@
       </th>
       <td class="table-form_tableData">
         <%= collection_select :user, :industry_type_id, @industry_types, :id, :name, :prompt => "次から選択してください", :selected => @user.industry_type_id %>
+        <% if @user.errors.messages[:industry_type_id].any? %>
+        <span class="d-b fc-red mt-10">
+          <%= @user.errors.messages[:industry_type_id][0] %></p>
+        </span>
+        <% end %>
       </td>
     </tr>
     <tr>
@@ -71,6 +75,11 @@
       </th>
       <td class="table-form_tableData">
         <%= collection_select :user, :section_id, @sections, :id, :name, :prompt => "次から選択してください", :selected => @user.section_id %>
+        <% if @user.errors.messages[:section_id].any? %>
+        <span class="d-b fc-red mt-10">
+          <%= @user.errors.messages[:section_id][0] %></p>
+        </span>
+        <% end %>
       </td>
     </tr>
   </table>

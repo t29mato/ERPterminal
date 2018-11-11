@@ -37,10 +37,14 @@ h1{
 }
 
 h2{
-  font-size: 32px;
+  font-size: 24px;
 }
 
-h3, h4, h5, h6, p {
+h3 {
+  font-size: 20px;
+}
+
+h4, h5, h6, p {
 }
 
 input {
@@ -58,7 +62,7 @@ body {
 .container {
   width: 840px;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
 }
@@ -124,23 +128,26 @@ footer {
   }
 }
 
+
 /* 規定値設定 ================================ */
-.t-c {
-  text-align: center;
-}
 
-.mt-40 {
-  margin-top: 40px;
-}
+// display
+.d-b {display: block;}
+.d-ib {display: inline-block;}
 
-.fs-12 {
-  font-size: 12px;
-}
+// text-align
+.t-c {text-align: center;}
 
+// margin
+.mt-10 {margin-top: 10px;}
+.mt-40 {margin-top: 40px;}
+.ml-10 {margin-left: 10px;}
+
+// font-size
+.fs-14 {font-size: 14px;}
+.fs-12 {font-size: 12px;}
+
+// font-color
 .fc-red {
   color: #f30925;
-}
-
-.d-b {
-  display: block;
 }
