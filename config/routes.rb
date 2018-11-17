@@ -17,16 +17,18 @@ Rails.application.routes.draw do
 
 #----口コミ情報------------------------
   get 'reviews/index' => "reviews#index"
+  get "reviews/new" => "reviews#new"
+  post "reviews/create" => "reviews#create"
   # 極力最後にする必要のあるルーティング
   get 'reviews/:id' => "reviews#show"
 
 #----ユーザー情報------------------------
   get 'users/index' => "users#index"
-  get "/users/new" => "users#new"
-  post "/users/create" => "users#create"
-  get "/users/:id/edit" => "users#edit"
-  post "/users/:id/update" => "users#update"
-  post "/users/:id/destroy" => "users#destroy"
+  get "users/new" => "users#new"
+  post "users/create" => "users#create"
+  get "users/:id/edit" => "users#edit"
+  post "users/:id/update" => "users#update"
+  post "users/:id/destroy" => "users#destroy"
 
 #----ログイン制御------------------------
   get "/login" => "users#login_form"

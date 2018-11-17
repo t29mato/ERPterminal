@@ -6,6 +6,7 @@
   <div class="header-menus">
     <a href="/about">ERPterminalとは？</a>
     <% if @current_user %>
+      <a href="/reviews/new">口コミ投稿</a>
       <a href="/users/index">User一覧</a>
       <%= link_to("【#{@current_user.nickname}】ログアウト", "/logout", {method: :post}) %>
     <% else %>

@@ -1,0 +1,76 @@
+<div class="form">
+  <table class="table-form">
+    <tr>
+      <th class="table-form_tableHeader">
+        <span>User ID</span>
+      </th>
+      <td class="table-form_tableData">
+        <input class="textarea" type="number" name="review[user_id]" value="<%= @review.user_id %>">
+      </td>
+    </tr>
+    <tr>
+      <th class="table-form_tableHeader">
+        <span>対象システム</span>
+      </th>
+      <td class="table-form_tableData">
+        <%= collection_select :review, :vendor_system_id, @vendor_systems, :id, :vendor_id, :prompt => "次から選択してください", :selected => @review.vendor_system_id %>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-form_tableHeader">
+        <span>カテゴリ</span>
+      </th>
+      <td class="table-form_tableData">
+        <%= collection_select :review, :category_id, @categories, :id, :name, :prompt => "次から選択してください", :selected => @review.category_id %>
+        <% if @review.errors.messages[:category_id].any? %>
+        <span class="d-b fc-red mt-10">
+          <%= @review.errors.messages[:category_id][0] %></p>
+        </span>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-form_tableHeader">
+        <span>スコア</span>
+      </th>
+      <td class="table-form_tableData">
+        <input class="textarea" type="number" name="review[score]" value="<%= @review.score %>">
+      </td>
+    </tr>
+    <tr>
+      <th class="table-form_tableHeader">
+        <span>導入期間</span>
+      </th>
+      <td class="table-form_tableData">
+        <%= select :review, :working_period, @working_periods, :prompt => "次から選択してください" %>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-form_tableHeader">
+        <span>対象業務</span>
+      </th>
+      <td class="table-form_tableData">
+        <%= collection_select :review, :business_type_id, @business_types, :id, :name, :prompt => "次から選択してください", :selected => @review.business_type_id %>
+        <% if @review.errors.messages[:business_type_id].any? %>
+        <span class="d-b fc-red mt-10">
+          <%= @review.errors.messages[:business_type_id][0] %></p>
+        </span>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-form_tableHeader">
+        <span>コメント</span>
+      </th>
+      <td class="table-form_tableData">
+        <input class="textarea review_form" type="text" name="review[content]" value="<%= @review.content %>">
+      </td>
+    </tr>
+  </table>
+  <div class="t-c mt-40 fs-12">
+    <p>ERPterminalの<a class="fs-12" href="/terms">利用規約</a>および<a class="fs-12" href="/privacy">プライバシーポリシー</a>に同意した上で、「同意してユーザー登録」を押して下さい。</p>
+  </div>
+  <div class="t-c mt-40">
+    <input class="button" type="submit" value="口コミ投稿">
+  </div>
+</div>
