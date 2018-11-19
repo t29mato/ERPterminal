@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
 
+  before_action :authenticate_user, {only: [:new, :create, :edit, :destroy]}
   before_action :get_tables_name_from_id
   before_action :get_vendor_system_id
 
@@ -13,6 +14,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_adjust_params)
+    @review[:user_id] = @current_user.id
     if @review.save
       flash[:notice] = "ユーザ登録完了しました"
       redirect_to("/top")
