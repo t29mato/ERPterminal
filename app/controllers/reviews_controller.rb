@@ -2,7 +2,6 @@ class ReviewsController < ApplicationController
 
   before_action :authenticate_user, {only: [:new, :create, :edit, :destroy]}
   before_action :get_tables_name_from_id
-  before_action :get_vendor_system_id
 
   def index
     @reviews = Review.all
@@ -10,13 +9,16 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @vendor = Vendor.find_by(id: params[:id])
+    @vendor_systems = @vendor.get_vendor_systems
+    @systems = @vendor.get_systems(@vendor_systems)
   end
 
   def create
     @review = Review.new(review_adjust_params)
     @review[:user_id] = @current_user.id
     if @review.save
-      flash[:notice] = "ユーザ登録完了しました"
+      flash[:notice] = "口コミ投稿完了しました"
       redirect_to("/top")
     else
       render '/reviews/new'
@@ -38,10 +40,5 @@ class ReviewsController < ApplicationController
     @business_types = BusinessType.all
     @working_periods = ["利用前（現在構築中）", "現在利用中（２年以内）", "現在利用中（３〜５年）", "現在利用中（５年以上）", "過去に利用していた"]
   end
-
-  def get_vendor_system_id
-    @vendor_systems = VendorSystem.all
-  end
-
 
 end

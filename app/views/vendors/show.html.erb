@@ -4,7 +4,8 @@
     <div class="currentPath">
       <a href="/top">HOME</a> >
       <a href="/vendors/index">ベンダー一覧</a> >
-      <a><%= @vendor.name %></a>
+      <a><%= @vendor.name %></a> >
+      <a><%= link_to("口コミ投稿", "/reviews/#{@vendor.id}/new") %></a>
     </div>
     <section class="container">
       <div class="contentsHeader_text">

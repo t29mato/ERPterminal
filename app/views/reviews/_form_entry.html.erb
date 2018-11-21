@@ -5,7 +5,7 @@
         <span>対象システム</span>
       </th>
       <td class="table-form_tableData">
-        <%= collection_select :review, :vendor_system_id, @vendor_systems, :id, :vendor_id, :prompt => "次から選択してください", :selected => @review.vendor_system_id %>
+        <%= collection_select :review, :vendor_system_id, @systems, :id, :name, :prompt => "次から選択してください", :selected => @review.vendor_system_id %>
       </td>
     </tr>
     <tr>

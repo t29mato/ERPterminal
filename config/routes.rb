@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
 #----口コミ情報------------------------
   get 'reviews/index' => "reviews#index"
-  get "reviews/new" => "reviews#new"
+  get "reviews/:id/new" => "reviews#new"
   post "reviews/create" => "reviews#create"
   # 極力最後にする必要のあるルーティング
   get 'reviews/:id' => "reviews#show"
