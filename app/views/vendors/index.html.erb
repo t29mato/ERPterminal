@@ -23,7 +23,7 @@
           <% @vendors.each do |vendor| %>
             <li>
               <div class="searchCompanyArea">
-                <div class="searchCompanyLogoArea"><%= image_tag("vendorLogo/#{vendor.id}.png") %></div>
+                <div class="searchCompanyLogoArea"><%= image_tag("vendorLogo/#{vendor.id}.jpg") %></div>
                 <div class="searchCompanyName">
                   <div>
                     <%= link_to("#{vendor.name}", "/vendors/#{vendor.id}") %>

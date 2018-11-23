@@ -5,7 +5,7 @@
       <a href="/top">HOME</a> >
       <a href="/vendors/index">ベンダー一覧</a> >
       <a><%= @vendor.name %></a> >
-      <a><%= link_to("口コミ投稿", "/reviews/#{@vendor.id}/new") %></a>
+      <a><%= link_to("口コミ投稿", "/reviews/v/#{@vendor.id}/new") %></a>
     </div>
     <section class="container">
       <div class="contentsHeader_text">
@@ -16,7 +16,7 @@
           <div class="rating-num"><%= "#{@vendor.id}.5" %></div>
         </div>
         <div class="targetLogoImage">
-        <%= image_tag("vendorLogo/#{@vendor.id}.png") %></div>
+        <%= image_tag("vendorLogo/#{@vendor.id}.jpg") %></div>
       </div>
       <div class="title">
         <h3>ユーザーによる評価スコア</h3>

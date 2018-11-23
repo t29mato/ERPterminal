@@ -9,9 +9,23 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    @vendor = Vendor.find_by(id: params[:id])
-    @vendor_systems = @vendor.get_vendor_systems
-    @systems = @vendor.get_systems(@vendor_systems)
+    # URL経由で絞り込み処理(Vendor or System)
+    if params[:kind] == "v"
+      @main_kind = Vendor.find_by(id: params[:id])
+      @vendor_systems = @main_kind.get_vendor_systems
+      @sub_kinds = @main_kind.get_systems(@vendor_systems)
+      @main_kind_Logo = 'vendorLogo'
+      @main_kind_name = "対象ベンダー"
+      @sub_kind_name = "対象システム"
+    end
+    if params[:kind] == "s"
+      @main_kind = System.find_by(id: params[:id])
+      @vendor_systems = @main_kind.get_vendor_systems
+      @sub_kinds = @main_kind.get_vendors(@vendor_systems)
+      @main_kind_Logo = 'systemLogo'
+      @main_kind_name = "対象システム"
+      @sub_kind_name = "対象ベンダー"
+    end
   end
 
   def create
