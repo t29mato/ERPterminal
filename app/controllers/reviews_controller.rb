@@ -15,16 +15,16 @@ class ReviewsController < ApplicationController
       @vendor_systems = @main_kind.get_vendor_systems
       @sub_kinds = @main_kind.get_systems(@vendor_systems)
       @main_kind_Logo = 'vendorLogo'
-      @main_kind_name = "対象ベンダー"
-      @sub_kind_name = "対象システム"
+      @main_kind_header = "対象ベンダー"
+      @sub_kind_header = "対象システム"
     end
     if params[:kind] == "s"
       @main_kind = System.find_by(id: params[:id])
       @vendor_systems = @main_kind.get_vendor_systems
       @sub_kinds = @main_kind.get_vendors(@vendor_systems)
       @main_kind_Logo = 'systemLogo'
-      @main_kind_name = "対象システム"
-      @sub_kind_name = "対象ベンダー"
+      @main_kind_header = "対象システム"
+      @sub_kind_header = "対象ベンダー"
     end
   end
 

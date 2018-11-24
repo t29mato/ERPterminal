@@ -4,6 +4,9 @@
     <div class="container">
       <div class="content-body">
         <h2 class="d-ib">口コミ登録</h2>
+        <div class="targetLogoImage">
+          <%= image_tag("#{@main_kind_Logo}/#{@main_kind.id}.jpg") %>
+        </div>
         <%= form_tag("/reviews/create") do %>
           <%= render 'reviews/form_entry' %>
         <% end %>

@@ -2,16 +2,17 @@
   <table class="table-form">
     <tr>
       <th class="table-form_tableHeader bg-ltGr">
-        <span><%= @main_kind_name %></span>
+        <span><%= @main_kind_header %></span>
       </th>
       <td class="table-form_tableData bg-ltGr">
-        <%= @main_kind.name %>
-        <%= image_tag("#{@main_kind_Logo}/#{@main_kind.id}.jpg") %></div>
+        <div class="select-lock-box d-ib">
+          <p><%= @main_kind.name %></p>
+        </div>
       </td>
     </tr>
     <tr>
       <th class="table-form_tableHeader">
-        <span><%= @sub_kind_name %></span>
+        <span><%= @sub_kind_header %></span>
       </th>
       <td class="table-form_tableData">
         <%= collection_select :review, :vendor_system_id, @sub_kinds, :id, :name, :prompt => "次から選択してください", :selected => @review.vendor_system_id %>

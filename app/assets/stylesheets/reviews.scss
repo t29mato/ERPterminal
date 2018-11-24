@@ -43,3 +43,14 @@ article {
     margin: 20px 0px 10px;
   }
 }
+
+.content-body .targetLogoImage {
+  display: inline-block;
+  img {
+    min-height: 40px;
+    max-height: 80px;
+    max-width: 300px;
+    margin-top: 10px;
+    margin-left: 50px;
+  }
+}
