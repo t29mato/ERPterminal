@@ -57,7 +57,18 @@
         <span>スコア</span>
       </th>
       <td class="table-form_tableData">
-        <input class="textarea" type="number" name="review[score]" value="<%= @review.score %>">
+        <fieldset class="starability-growRotate">
+          <input type="radio" id="rate1" name="review[score]" value="1" />
+          <label for="rate1" title="Terrible">1 star</label>
+          <input type="radio" id="rate2" name="review[score]" value="2" />
+          <label for="rate2" title="Terrible">2 star</label>
+          <input type="radio" id="rate3" name="review[score]" value="3" />
+          <label for="rate3" title="Terrible">3 star</label>
+          <input type="radio" id="rate4" name="review[score]" value="4" />
+          <label for="rate4" title="Terrible">4 star</label>
+          <input type="radio" id="rate5" name="review[score]" value="5" />
+          <label for="rate5" title="Terrible">5 star</label>
+        </fieldset>
       </td>
     </tr>
     <tr>
