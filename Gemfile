@@ -56,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # グラフを描くためのGEMをインストール
  gem'lazy_high_charts'
+
+# 星評価のために、jQueryをインストール
+gem "jquery-rails"

@@ -57,7 +57,14 @@
         <span>スコア</span>
       </th>
       <td class="table-form_tableData">
-        <input class="textarea" type="number" name="review[score]" value="<%= @review.score %>">
+        <span class="star-rating">
+          <input type="radio" name="review[score]" value="1"><i></i>
+          <input type="radio" name="review[score]" value="2"><i></i>
+          <input type="radio" name="review[score]" value="3"><i></i>
+          <input type="radio" name="review[score]" value="4"><i></i>
+          <input type="radio" name="review[score]" value="5"><i></i>
+          <h2 class="choice">Choose a rating</h2>
+        </span>
       </td>
     </tr>
     <tr>
